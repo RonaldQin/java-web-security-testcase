@@ -8,9 +8,10 @@
   Time: 上午11:07
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
+	<meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
@@ -22,12 +23,10 @@
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
         try {
-            Response response = client.newCall(request).execute();
+	        Response response = client.newCall(request).execute();
             result = response.body().string();
         } catch (Exception e) {
-            out.print("<pre>");
-            e.printStackTrace(response.getWriter());
-            out.print("</pre>");
+        	e.printStackTrace();
         }
         return result;
     }

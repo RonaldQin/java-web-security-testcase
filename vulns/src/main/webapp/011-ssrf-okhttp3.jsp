@@ -11,6 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+	<meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
@@ -25,9 +26,7 @@
             Response response = client.newCall(request).execute();
             result = response.body().string();
         } catch (Exception e) {
-            out.print("<pre>");
-            e.printStackTrace(response.getWriter());
-            out.print("</pre>");
+            e.printStackTrace();
         }
         return result;
     }
