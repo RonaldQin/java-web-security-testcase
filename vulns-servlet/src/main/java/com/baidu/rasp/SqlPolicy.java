@@ -24,7 +24,7 @@ public class SqlPolicy extends HttpServlet {
         Statement stmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test1", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test1", "root", "root");
             stmt = conn.createStatement();
         } catch (Exception e) {
             resp.getWriter().println(e);

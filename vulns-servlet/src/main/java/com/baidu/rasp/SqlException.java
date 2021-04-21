@@ -24,7 +24,7 @@ public class SqlException extends HttpServlet {
         ResultSet rset = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "test", "test");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
             stmt = conn.createStatement();
             rset = stmt.executeQuery("select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x");
         } catch (Exception e) {
